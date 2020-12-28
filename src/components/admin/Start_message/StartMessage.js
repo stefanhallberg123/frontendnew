@@ -4,13 +4,14 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPenAlt } from "@fortawesome/free-solid-svg-icons";
 import { faTrashAlt } from "@fortawesome/free-solid-svg-icons";
 import "./startMessage.scss";
-import AddMessage from "./Add_message/AddMessage";
+// import AddMessage from "./Add_message/AddMessage";
+// import { useHistory } from "react-router-dom";
 
-export default function StartMessage() {
+export default function StartMessage(props) {
   // const { id } = this.props;
-  const [show, setshow] = useState(false);
+  // const [show, setshow] = useState(false);
   const [message, setMessage] = useState([]);
-  // let history = useHistory();
+  // const history = useHistory();
 
   useEffect(() => {
     const fetchMSG = async () => {
@@ -22,10 +23,9 @@ export default function StartMessage() {
   }, []);
 
   const respondeMSG = (msgID) => {
-    setshow(true);
     console.log(msgID);
-    // let url = `/admin/messages/add/${msgID}`;
-    // history.push(url);
+    let url = `/admin/messages/add/${msgID}`;
+    props.history.push(url);
   };
 
   const deleteMSG = (id) => {
@@ -38,58 +38,52 @@ export default function StartMessage() {
 
   return (
     <div>
-      {message &&
-        message.map((m, i) => {
-          return (
-            <div key={i}>
-              {show ? (
-                <AddMessage onShowClick={respondeMSG} message={message} />
-              ) : (
-                <div>
-                  <h1>Meddelanden</h1>
-                  <div>
-                    <table>
-                      <colgroup span={4}></colgroup>
-                      <thead>
-                        <tr>
-                          <th>Ämne</th>
-                          <th>Regnr</th>
-                          <th>Namn</th>
-                          <th>Epost</th>
-                          <th>Beskrivning</th>
-                          <th>Svara</th>
-                          <th>Radera</th>
-                        </tr>
-                      </thead>
+      <div>
+        <h1>Meddelanden</h1>
+        <div>
+          <table>
+            <colgroup span={4}></colgroup>
+            <thead>
+              <tr>
+                <th>Ämne</th>
+                <th>Regnr</th>
+                <th>Namn</th>
+                <th>Epost</th>
+                <th>Beskrivning</th>
+                <th>Svara</th>
+                <th>Radera</th>
+              </tr>
+            </thead>
 
-                      <tbody>
-                        <tr>
-                          <td>{m.subject}</td>
-                          <td>{m.regnumber.toUpperCase()}</td>
-                          <td>{m.name}</td>
-                          <td>{m.email}</td>
-                          <td className="desc">{m.description}</td>
-                          <td>
-                            <FontAwesomeIcon
-                              icon={faPenAlt}
-                              onClick={() => respondeMSG(m._id)}
-                            />
-                          </td>
-                          <td>
-                            <FontAwesomeIcon
-                              icon={faTrashAlt}
-                              onClick={() => deleteMSG(m._id)}
-                            />
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-              )}
-            </div>
-          );
-        })}
+            {message &&
+              message.map((m, i) => {
+                return (
+                  <tbody key={i}>
+                    <tr>
+                      <td>{m.subject}</td>
+                      <td>{m.regnumber.toUpperCase()}</td>
+                      <td>{m.name}</td>
+                      <td>{m.email}</td>
+                      <td className="desc">{m.description}</td>
+                      <td>
+                        <FontAwesomeIcon
+                          icon={faPenAlt}
+                          onClick={() => respondeMSG(m._id)}
+                        />
+                      </td>
+                      <td>
+                        <FontAwesomeIcon
+                          icon={faTrashAlt}
+                          onClick={() => deleteMSG(m._id)}
+                        />
+                      </td>
+                    </tr>
+                  </tbody>
+                );
+              })}
+          </table>
+        </div>
+      </div>
     </div>
   );
 }
