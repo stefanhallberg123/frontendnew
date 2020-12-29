@@ -4,14 +4,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPenAlt } from "@fortawesome/free-solid-svg-icons";
 import { faTrashAlt } from "@fortawesome/free-solid-svg-icons";
 import "./startMessage.scss";
-// import AddMessage from "./Add_message/AddMessage";
-// import { useHistory } from "react-router-dom";
 
 export default function StartMessage(props) {
-  // const { id } = this.props;
-  // const [show, setshow] = useState(false);
   const [message, setMessage] = useState([]);
-  // const history = useHistory();
 
   useEffect(() => {
     const fetchMSG = async () => {
@@ -23,7 +18,7 @@ export default function StartMessage(props) {
   }, []);
 
   const respondeMSG = (msgID) => {
-    console.log(msgID);
+    // console.log(msgID, msgSubj, msgEmail);
     let url = `/admin/messages/add/${msgID}`;
     props.history.push(url);
   };
@@ -68,7 +63,7 @@ export default function StartMessage(props) {
                       <td>
                         <FontAwesomeIcon
                           icon={faPenAlt}
-                          onClick={() => respondeMSG(m._id)}
+                          onClick={() => respondeMSG(m._id, m.subject, m.email)}
                         />
                       </td>
                       <td>

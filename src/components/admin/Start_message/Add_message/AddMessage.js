@@ -4,19 +4,8 @@ import { useParams } from "react-router-dom";
 import Axios from "axios";
 
 export default function AddMessage() {
-  const [repost, setRepost] = useState({
-    answer: "",
-    email: "",
-    subject: "",
-  });
+  // id from params
   let { id } = useParams();
-  const [msg, setMsg] = useState([
-    {
-      id: id,
-    },
-  ]);
-
-  // hämtar id via params
 
   // kopplar id mot id i databasen och lägger det msg som array
   useEffect(() => {
@@ -24,22 +13,34 @@ export default function AddMessage() {
       Axios.get(`http://localhost:5000/admin/messages/add/${id}`).then(
         (response) => {
           setMsg(response.data);
+          setEmail(response.data[0].email);
+          setSubject(response.data[0].subject);
         }
       );
     };
     fetchMSG();
   }, [id]);
+  const [msg, setMsg] = useState([]);
+  const [email, setEmail] = useState("");
+  const [answer, setAnswer] = useState("");
+  const [subject, setSubject] = useState("");
 
   // skickar meddelandet till databasen som sedan ska skicka ut det som ett mejl
-  const sendMsg = () => {
-    // Axios.post(`http://localhost:5000/admin/messages/`);
-    console.log(repost);
+  const sendMsg = (e) => {
+    e.preventDefault();
+    Axios.post(`http://localhost:5000/admin/message/add/${id}`, {
+      email,
+      answer,
+      subject,
+    })
+      .then((respone) => {
+        console.log(respone.data);
+      })
+      .catch(function (err) {
+        console.log(err);
+      });
   };
-  // hämtar nya datan från input
-  const newData = (e) => {
-    setRepost({ [e.target.name]: e.target.value && e.target.name });
-  };
-  console.log(msg);
+
   return (
     <div className="message">
       <h1>Svara Meddelande</h1>
@@ -47,16 +48,16 @@ export default function AddMessage() {
         return (
           <form onSubmit={sendMsg} key={m}>
             <div>Namn: {i.name}</div>
-            <div name="email" onLoad={newData}>
-              Epost: {i.email}
-            </div>
-            <div onLoad={newData} name="subject">
-              Ämne: {i.subject}
-            </div>
+            <div>Email: {i.email}</div>
+            <div>Ämne: {i.subject}</div>
             <div> Regnummer: {i.regnumber}</div>
-            <div>Beskrivning: {i.description}</div>
+            <div>Fråga: {i.description}</div>
             <h3>Svar:</h3>
-            <input onChange={newData} name="answer" type="textarea"></input>
+            <input
+              onChange={(e) => setAnswer(e.target.value)}
+              name="answer"
+              type="textarea"
+            ></input>
             <button type="submit">Svara</button>
           </form>
         );
