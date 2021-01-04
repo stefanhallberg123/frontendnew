@@ -1,9 +1,10 @@
+import "./startMessage.scss";
 import Axios from "axios";
 import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPenAlt } from "@fortawesome/free-solid-svg-icons";
 import { faTrashAlt } from "@fortawesome/free-solid-svg-icons";
-import "./startMessage.scss";
+import Navbar from "../Navbar/Navbar";
 
 export default function StartMessage(props) {
   const [message, setMessage] = useState([]);
@@ -33,18 +34,19 @@ export default function StartMessage(props) {
 
   return (
     <div>
+      <Navbar></Navbar>
       <div>
         <h1>Meddelanden</h1>
-        <div>
+        <div className="tbl">
           <table>
             <colgroup span={4}></colgroup>
             <thead>
-              <tr>
-                <th>Ämne</th>
+              <tr className="top">
                 <th>Regnr</th>
+                <th>Ämne</th>
                 <th>Namn</th>
-                <th>Epost</th>
-                <th>Beskrivning</th>
+                <th className="notOnPhone">Epost</th>
+                <th className="notOnPhone">Beskrivning</th>
                 <th>Svara</th>
                 <th>Radera</th>
               </tr>
@@ -55,11 +57,11 @@ export default function StartMessage(props) {
                 return (
                   <tbody key={i}>
                     <tr>
-                      <td>{m.subject}</td>
                       <td>{m.regnumber.toUpperCase()}</td>
+                      <td>{m.subject}</td>
                       <td>{m.name}</td>
-                      <td>{m.email}</td>
-                      <td className="desc">{m.description}</td>
+                      <td className="notOnPhone">{m.email}</td>
+                      <td className="notOnPhone">{m.description}</td>
                       <td>
                         <FontAwesomeIcon
                           icon={faPenAlt}

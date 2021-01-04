@@ -1,11 +1,11 @@
 .navbar {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-between;
+  align-items: stretch;
 }
 .navbar__link {
   margin: 1em;
-  font-size: 2em;
+  font-size: 13px;
   font-family: "Roboto", sans-serif;
   cursor: pointer;
   text-decoration: none;
@@ -19,7 +19,7 @@
   transform: translateY(-2px);
 }
 
-.navbar__link--active {
+.active {
   border-bottom: 3px solid #333;
   transition: border-bottom 0.5s ease-in-out;
 }

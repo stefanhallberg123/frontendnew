@@ -4,20 +4,23 @@ import "./navbar.scss";
 export default function Navbar() {
   return (
     <div>
-      <nav className="nav">
+      <nav className="navbar">
+        <NavLink
+          to="/admin/messages"
+          className="navbar__link"
+          activeClassName="active"
+        >
+          Meddelanden
+        </NavLink>
         <NavLink
           to="/admin/cars"
-          activeClassName="navbar__link--active"
-          className="nav-link"
+          className="navbar__link"
+          activeClassName="active"
         >
           Bilar
         </NavLink>
-        <NavLink
-          to="/admin/messages"
-          activeClassName="navbar__link--active"
-          className="nav-link"
-        >
-          Meddelanden
+        <NavLink className="navbar__link" to="/admin/logout">
+          Logga ut
         </NavLink>
       </nav>
     </div>

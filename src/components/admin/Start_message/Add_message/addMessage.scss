@@ -1,3 +1,57 @@
 .message {
+  box-sizing: border-box;
   text-align: center;
+  display: block;
+  width: 100%;
+  .exit {
+    margin-right: 90%;
+    font-size: 30px;
+  }
+  input[type="text"] {
+    width: 95%;
+    padding: 12px;
+    border: 1px solid black;
+    border-radius: 4px;
+    resize: vertical;
+  }
+  textarea {
+    height: 150px;
+    padding: 12px;
+    border: 1px solid black;
+    border-radius: 4px;
+    resize: vertical;
+    width: 90%;
+  }
+  button {
+    background-color: #333;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: center;
+    width: 50%;
+  }
+  .col-75 {
+    float: left;
+    width: 96%;
+    margin-top: 6px;
+  }
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+@media screen and (max-width: 999px) {
+  .col-75,
+  button {
+    width: 95%;
+    margin-top: 0;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .exit {
+    display: none;
+  }
 }
