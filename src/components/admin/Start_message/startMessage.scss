@@ -7,16 +7,17 @@ h1 {
     border-collapse: collapse;
     border-spacing: 0;
     width: 100%;
-    tr:nth-of-type(even) {
+    .bot:nth-of-type(even) {
       background-color: #ccc;
     }
-    tr:hover {
+    .bot:hover {
       background-color: #ddd;
     }
-    tr {
+    .bot {
       border: 1px solid #333;
     }
     .top {
+      border: 1px solid #333;
       background-color: green;
       color: white;
     }

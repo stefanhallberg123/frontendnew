@@ -4,6 +4,7 @@
   align-items: stretch;
 }
 .navbar__link {
+  font-weight: bold;
   margin: 1em;
   font-size: 13px;
   font-family: "Roboto", sans-serif;
@@ -13,13 +14,15 @@
   text-indent: 0.3em;
   color: #181818;
   border-bottom: 3px solid transparent;
+  // border-bottom: 3px solid #333;
+  // transition: border-bottom 0.5s ease-in-out;
 }
 
 .navbar__link:hover {
   transform: translateY(-2px);
 }
-
-.active {
-  border-bottom: 3px solid #333;
-  transition: border-bottom 0.5s ease-in-out;
+@media screen and (min-width: 1000px) {
+  .navbar__link {
+    font-size: 20px;
+  }
 }

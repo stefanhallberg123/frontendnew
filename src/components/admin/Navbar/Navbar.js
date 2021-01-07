@@ -10,11 +10,7 @@ export default function Navbar() {
   return (
     <div>
       <nav className="navbar">
-        <NavLink
-          to="/admin/messages"
-          className="navbar__link"
-          activeClassName="active"
-        >
+        <NavLink to="/admin/messages" className="navbar__link">
           Meddelanden
         </NavLink>
         <a

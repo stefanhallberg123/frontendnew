@@ -56,7 +56,7 @@ export default function StartMessage(props) {
               message.map((m, i) => {
                 return (
                   <tbody key={i}>
-                    <tr>
+                    <tr className="bot">
                       <td>{m.regnumber}</td>
                       <td>{m.subject}</td>
                       <td>{m.name}</td>
