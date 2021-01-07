@@ -2,6 +2,11 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import "./navbar.scss";
 export default function Navbar() {
+  // const goToPhp = () => {
+  //   window.location.href =
+  //     "http://localhost/P.ALbilhandel-backendPHP/php/index.php";
+  // };
+
   return (
     <div>
       <nav className="navbar">
@@ -12,16 +17,18 @@ export default function Navbar() {
         >
           Meddelanden
         </NavLink>
-        <NavLink
-          to="/admin/cars"
+        <a
           className="navbar__link"
-          activeClassName="active"
+          href="http://localhost/P.ALbilhandel-backendPHP/php/index.php"
         >
           Bilar
-        </NavLink>
-        <NavLink className="navbar__link" to="/admin/logout">
-          Logga ut
-        </NavLink>
+        </a>
+        <a
+          className="navbar__link"
+          href="http://localhost/P.ALbilhandel-backendPHP/php/Views/login.php"
+        >
+          Logga Ut
+        </a>
       </nav>
     </div>
   );

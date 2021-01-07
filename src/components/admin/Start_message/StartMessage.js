@@ -57,7 +57,7 @@ export default function StartMessage(props) {
                 return (
                   <tbody key={i}>
                     <tr>
-                      <td>{m.regnumber.toUpperCase()}</td>
+                      <td>{m.regnumber}</td>
                       <td>{m.subject}</td>
                       <td>{m.name}</td>
                       <td className="notOnPhone">{m.email}</td>

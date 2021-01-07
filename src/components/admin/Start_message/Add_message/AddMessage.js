@@ -22,6 +22,7 @@ export default function AddMessage() {
     };
     fetchMSG();
   }, [id]);
+  // separata startvärden och variabler
   const [msg, setMsg] = useState([]);
   const [email, setEmail] = useState("");
   const [answer, setAnswer] = useState("");
@@ -35,12 +36,14 @@ export default function AddMessage() {
       answer,
       subject,
     })
+      // Sätter startvärden på email och ämne men plockar svaret dynamiskt och skickar till DB
       .then((respone) => {
         console.log(respone.data);
       })
       .catch(function (err) {
         console.log(err);
       });
+    //När man har skickat ett meddelande så hamnar man på start
     setTimeout(() => {
       history.goBack();
     }, 2000);
