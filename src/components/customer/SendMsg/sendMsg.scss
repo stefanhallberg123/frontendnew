@@ -1,0 +1,90 @@
+.MuiIconButton-label {
+  display: none !important;
+}
+.placer {
+  position: relative;
+  display: inline;
+  .emailIcon {
+    font-size: 50px;
+    // width: 40px; /* sample width - set as you wish */
+    // bottom: 10%;
+    // left: 90%;
+    position: absolute;
+    bottom: 15px;
+    right: 20px;
+    font-size: 50px;
+    position: fixed;
+  }
+}
+.message {
+  box-sizing: border-box;
+  text-align: center;
+  display: inline-block;
+  width: 100%;
+  z-index: 100;
+  .exit {
+    margin-left: 90%;
+    font-size: 30px;
+  }
+  .col-75 {
+    float: left;
+    width: 100%;
+    margin-top: 6px;
+
+    .formInput {
+      margin-top: 15px;
+      width: 70%;
+      padding: 12px;
+      border: 1px solid black;
+      border-radius: 4px;
+      resize: vertical;
+    }
+  }
+  .textAnswer {
+    margin-top: 15px;
+    height: 150px;
+    padding: 12px;
+    border: 1px solid black;
+    border-radius: 4px;
+    resize: vertical;
+    width: 60vw;
+  }
+  .msgBtn {
+    margin-top: 15px;
+    background-color: #333;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: center;
+    width: 40%;
+  }
+
+  .col-25 {
+    margin-top: 15px;
+    text-align: center;
+  }
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .error {
+    margin-top: 10px;
+    text-align: center;
+    color: red;
+  }
+  .sent {
+    margin-top: 10px;
+    text-align: center;
+    color: green;
+  }
+}
+@media screen and (max-width: 999px) {
+  .col-75,
+  .msgBtn {
+    width: 95%;
+    margin-top: 0;
+  }
+}
