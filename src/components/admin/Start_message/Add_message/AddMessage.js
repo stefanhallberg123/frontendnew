@@ -63,31 +63,52 @@ export default function AddMessage() {
           <form onSubmit={sendMsg} key={m}>
             <div className="row">
               <div className="col-75">
-                <input defaultValue={`Namn: ${i.name}`} type="text" />
+                <input
+                  className="formInput"
+                  defaultValue={`Namn: ${i.name}`}
+                  type="text"
+                />
               </div>
             </div>
             <div className="row">
               <div className="col-75">
-                <input defaultValue={`Email: ${i.email}`} type="text" />
+                <input
+                  className="formInput"
+                  defaultValue={`Email: ${i.email}`}
+                  type="text"
+                />
               </div>
             </div>
             <div className="row">
               <div className="col-75">
-                <input defaultValue={`Ämne: ${i.subject}`} type="text" />
+                <input
+                  className="formInput"
+                  defaultValue={`Ämne: ${i.subject}`}
+                  type="text"
+                />
               </div>
             </div>
             <div className="row">
               <div className="col-75">
-                <input defaultValue={`Regnummer: ${i.regnumber}`} type="text" />
+                <input
+                  className="formInput"
+                  defaultValue={`Regnummer: ${i.regnumber}`}
+                  type="text"
+                />
               </div>
             </div>
             <div className="row">
               <div className="col-75">
-                <input defaultValue={`Fråga: ${i.description}`} type="text" />
+                <input
+                  className="formInput"
+                  defaultValue={`Fråga: ${i.description}`}
+                  type="text"
+                />
               </div>
             </div>
             <h3>Svar:</h3>
             <textarea
+              className="textAnswer"
               onChange={(e) => setAnswer(e.target.value)}
               name="answer"
               type="textarea"

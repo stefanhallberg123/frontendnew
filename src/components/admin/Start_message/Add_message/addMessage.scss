@@ -3,18 +3,18 @@
   text-align: center;
   display: block;
   width: 100%;
-  .exit {
+  .exitDSKTP {
     margin-right: 90%;
-    font-size: 30px;
+    font-size: 20px;
   }
-  input[type="text"] {
+  .formInput {
     width: 95%;
     padding: 12px;
     border: 1px solid black;
     border-radius: 4px;
     resize: vertical;
   }
-  textarea {
+  .textAnswer {
     height: 150px;
     padding: 12px;
     border: 1px solid black;
@@ -22,7 +22,7 @@
     resize: vertical;
     width: 90%;
   }
-  button {
+  .msgBtn {
     background-color: #333;
     color: white;
     padding: 12px 20px;
@@ -45,7 +45,7 @@
 }
 @media screen and (max-width: 999px) {
   .col-75,
-  button {
+  .msgBtn {
     width: 95%;
     margin-top: 0;
   }
