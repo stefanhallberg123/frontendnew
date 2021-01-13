@@ -1,19 +1,27 @@
 .MuiIconButton-label {
   display: none !important;
 }
-.emailIcon {
-  font-size: 50px;
-  width: 40px; /* sample width - set as you wish */
-  position: absolute;
-  bottom: 10%;
-  left: 90%;
-  margin-left: -20px;
+.placer {
+  position: relative;
+  display: inline;
+  .emailIcon {
+    font-size: 50px;
+    // width: 40px; /* sample width - set as you wish */
+    // bottom: 10%;
+    // left: 90%;
+    position: absolute;
+    bottom: 15px;
+    right: 20px;
+    font-size: 50px;
+    position: fixed;
+  }
 }
 .message {
   box-sizing: border-box;
   text-align: center;
-  display: block;
+  display: inline-block;
   width: 100%;
+  z-index: 100;
   .exit {
     margin-left: 90%;
     font-size: 30px;

@@ -1,3 +1,64 @@
 * {
   font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  font-size: 13px letter-spacing 0.3em;
+  color: #181818;
+}
+.firstBlock {
+  height: 100vh;
+  .startImage {
+    width: 100%;
+    height: 70vh;
+    display: block;
+    object-fit: cover;
+  }
+  .ownRow {
+    display: block;
+    width: 100%;
+    .circle {
+      display: flex;
+      justify-content: space-evenly;
+      margin-top: 20px;
+      margin-bottom: 50px;
+      .circleText {
+        background: linear-gradient(gray, white);
+        justify-content: center;
+        align-items: center;
+        border-radius: 100%;
+        text-align: center;
+        margin: 5px 20px;
+        font-size: 15px;
+        padding: 15px;
+        display: flex;
+        height: 100px;
+        width: 100px;
+        font-weight: bolder;
+        border-color: #333;
+        border: 1px;
+      }
+    }
+  }
+}
+.secondBlock {
+  height: 110vh;
+  // .textInImg {
+  position: relative;
+  text-align: center;
+  .secondImage {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+  }
+  .imgTXT {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    bottom: 99%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 30px;
+  }
+  // }
 }

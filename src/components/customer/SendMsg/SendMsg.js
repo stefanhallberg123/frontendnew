@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
     height: 200,
   },
   paper: {
-    zIndex: 10,
+    zIndex: 100000,
     position: "fixed",
     // margin: theme.spacing(1),
     width: "100%",
@@ -91,10 +91,14 @@ export default function SendMsg() {
 
   return (
     <div className="message">
-      <FormControlLabel
-        control={<Checkbox checked={showModal} onChange={openModal} />}
-        label={<FontAwesomeIcon className="emailIcon" icon={faEnvelopeOpen} />}
-      />
+      <div className="placer">
+        <FormControlLabel
+          control={<Checkbox checked={showModal} onChange={openModal} />}
+          label={
+            <FontAwesomeIcon className="emailIcon" icon={faEnvelopeOpen} />
+          }
+        />
+      </div>
       <Slide direction="down" in={showModal} mountOnEnter unmountOnExit>
         <Paper elevation={0} className={classes.paper}>
           <form onSubmit={submit}>

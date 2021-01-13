@@ -1,0 +1,32 @@
+.row {
+  display: flex;
+  flex-direction: row;
+
+  .footerLogo {
+    margin-bottom: 20px;
+    width: 33%;
+    height: 50px;
+    justify-content: flex-start;
+    object-fit: contain;
+  }
+  .SoMo {
+    display: flex;
+    justify-content: center;
+    width: 33%;
+  }
+  .instagram {
+    font-size: 35px;
+    padding: 10px;
+  }
+  .facebook {
+    font-size: 35px;
+    padding: 10px;
+  }
+  .emailLogoFooter {
+    font-size: 35px;
+    padding: 10px;
+  }
+  .dead {
+    width: 33%;
+  }
+}
