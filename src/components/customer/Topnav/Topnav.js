@@ -1,51 +1,28 @@
 import React from "react";
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
-import MenuIcon from "@material-ui/icons/Menu";
-import { makeStyles } from "@material-ui/core/styles";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
+
 import "./topNav.scss";
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
-  },
-  menuButton: {
-    marginRight: theme.spacing(2),
-  },
-  inputRoot: {
-    color: "inherit",
-  },
-  logo: {
-    margin: "auto",
-    textAlign: "center",
-    width: "40%",
-    height: "40%",
-  },
-  logoHorizontallyCenter: {
-    position: "absolute",
-    left: "60%",
-    top: "40%",
-    transform: "translate(-50%, -50%)",
-  },
-}));
-
 export default function Topnav() {
-  const classes = useStyles();
   return (
-    <div className={classes.root}>
-      <AppBar position="fixed">
-        <Toolbar>
-          <MenuIcon />
-
-          <div className={classes.logoHorizontallyCenter}>
+    <div>
+      <nav className="navbarCustomer">
+        <div className="burgerIcon">
+          <FontAwesomeIcon className="burger" icon={faBars} />
+        </div>
+        <div className="NavLogoFlex">
+          <Link to="/">
             <img
-              className={classes.logo}
+              className="navLogo"
               src={`${process.env.PUBLIC_URL}/logos/logoTransp.png`}
               alt="logo"
             />
-          </div>
-        </Toolbar>
-      </AppBar>
+          </Link>
+        </div>
+        <div className="crap"></div>
+      </nav>
     </div>
 
     // <div>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Paper from "@material-ui/core/Paper";
 import Checkbox from "@material-ui/core/Checkbox";
 import Slide from "@material-ui/core/Slide";
@@ -16,9 +16,9 @@ const useStyles = makeStyles((theme) => ({
     height: 200,
   },
   paper: {
-    zIndex: 100000,
+    zIndex: 10000000,
     position: "fixed",
-    // margin: theme.spacing(1),
+    margin: theme.spacing(0),
     width: "100%",
     height: "100%",
     // bottom: theme.spacing(10),
@@ -31,6 +31,16 @@ export default function SendMsg() {
   const [showModal, setShowModal] = React.useState(false);
   const [error, setError] = React.useState("");
   const [sent, setSent] = React.useState("");
+  useEffect(() => {
+    if (showModal) {
+      document.body.style.overflow = "hidden";
+      document.body.style.paddingRight = "15px";
+    }
+    return () => {
+      document.body.style.overflow = "unset";
+      document.body.style.paddingRight = "0px";
+    };
+  }, [showModal]);
 
   // the data to send to db
   const [values, setValues] = React.useState({

@@ -11,7 +11,7 @@ export default function Footer() {
       <p>Vi erbjuder även gratis hemleverans inom Stockholms området. </p>
       <p>Vi reserverar oss för eventuella skriv och stavfel.</p>
       <p> Varmt Välkomna!</p>
-      <div className="row">
+      <div className="rowFooter">
         <img
           className="footerLogo"
           src={`${process.env.PUBLIC_URL}/logos/logoTransp.png`}

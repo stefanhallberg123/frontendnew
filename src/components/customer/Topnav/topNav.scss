@@ -1,28 +1,34 @@
-// .burger {
-//   font-size: 30px;
-//   margin-left: 10px;
-//   margin-top: 10px;
-//   position: -webkit-sticky;
-//   position: sticky;
-//   display: inline;
+// .MuiAppBar-colorPrimary {
+//   background-color: #fff !important;
 // }
-// .container {
-//   display: flex;
-//   justify-content: center;
-//   .logoImg {
-//     // margin-top: 20px;
-//     display: inline;
-//     height: 50px;
-//     // width: 200px;
-//     width: 10%;
-//     margin-top: 20px;
-//     margin-left: auto;
-//     margin-right: auto;
-//   }
+// .MuiIconButton-colorInherit {
+//   color: #333 !important;
 // }
-.MuiAppBar-colorPrimary {
-  background-color: #fff !important;
-}
-.MuiIconButton-colorInherit {
-  color: #333 !important;
+.navbarCustomer {
+  display: flex;
+  flex-direction: row;
+  background-color: transparent;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  text-align: center;
+  .burgerIcon {
+    width: 33%;
+    justify-content: flex-start;
+    margin-top: 12px;
+    .burger {
+      font-size: 25px;
+    }
+  }
+  .NavLogoFlex {
+    width: 33%;
+    justify-content: center;
+    .navLogo {
+      height: 50px;
+      object-fit: contain;
+    }
+  }
+  .crap {
+    width: 33%;
+  }
 }
