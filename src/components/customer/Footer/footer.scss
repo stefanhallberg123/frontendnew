@@ -33,3 +33,13 @@ p {
     width: 33%;
   }
 }
+@media screen and (max-width: 800px) {
+  .rowFooter {
+    flex-direction: column-reverse;
+    justify-content: center;
+    .SoMo,
+    .footerLogo {
+      width: 100%;
+    }
+  }
+}

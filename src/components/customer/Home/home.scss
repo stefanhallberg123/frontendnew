@@ -19,7 +19,7 @@
       display: flex;
       justify-content: space-evenly;
       margin-top: 20px;
-      margin-bottom: 50px;
+      margin-bottom: 20px;
       .circleText {
         background: linear-gradient(gray, white);
         justify-content: center;
@@ -61,4 +61,14 @@
     font-size: 30px;
   }
   // }
+}
+@media screen and (max-width: 800px) {
+  .firstBlock .ownRow .circle .circleText {
+    width: 55px;
+    height: 55px;
+
+    .firstBlock .startImage {
+      height: 80vh;
+    }
+  }
 }
