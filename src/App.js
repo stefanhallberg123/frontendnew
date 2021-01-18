@@ -5,6 +5,7 @@ import StartMessages from "./components/admin/Start_message/StartMessage";
 import AddMessage from "./components/admin/Start_message/Add_message/AddMessage";
 import Home from "./components/customer/Home/Home";
 import AllCars from "./components/customer/AllCars/AllCars";
+import About from "./components/customer/About/About";
 
 function App() {
   return (
@@ -19,7 +20,7 @@ function App() {
             component={AddMessage}
           ></Route>
           <Route exact path="/allcars" component={AllCars}></Route>
-
+          <Route exact path="/about" component={About}></Route>
           <Route exact path="/" component={Home}></Route>
         </Switch>
       </Router>

@@ -7,7 +7,7 @@ import "./footer.scss";
 
 export default function Footer() {
   return (
-    <div>
+    <div className="footer">
       <p>Vi erbjuder även gratis hemleverans inom Stockholms området. </p>
       <p>Vi reserverar oss för eventuella skriv och stavfel.</p>
       <p> Varmt Välkomna!</p>

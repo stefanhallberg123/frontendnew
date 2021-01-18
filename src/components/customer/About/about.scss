@@ -1,0 +1,23 @@
+.aboutContainer {
+  text-align: center;
+  text-decoration: none;
+  .aboutUs {
+    margin-top: 10%;
+    display: inline-block;
+  }
+  .aboutUl {
+    list-style: none;
+    padding: 0;
+    .aboutLi {
+      margin-top: 10%;
+    }
+  }
+}
+@media screen and (min-width: 800px) {
+  .aboutContainer .aboutUl {
+    text-align: center;
+  }
+  .aboutContainer .aboutUl .aboutLi {
+    margin-top: 5%;
+  }
+}
