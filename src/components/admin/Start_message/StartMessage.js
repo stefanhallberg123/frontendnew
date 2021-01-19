@@ -19,7 +19,6 @@ export default function StartMessage(props) {
   }, []);
 
   const respondeMSG = (msgID) => {
-    // console.log(msgID, msgSubj, msgEmail);
     let url = `/admin/messages/add/${msgID}`;
     props.history.push(url);
   };
