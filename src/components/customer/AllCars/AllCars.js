@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import Footer from "../Footer/Footer";
 import Topnav from "../Topnav/Topnav";
+import SendMsg from "../SendMsg/SendMsg";
+
 import Axios from "axios";
 import "./allCars.scss";
 
@@ -55,6 +57,7 @@ export default function AllCars(props) {
   return (
     <div>
       <Topnav></Topnav>
+      <SendMsg></SendMsg>
       <h1>Alla våra bilar</h1>
       {cars.map((c, i) => {
         return (

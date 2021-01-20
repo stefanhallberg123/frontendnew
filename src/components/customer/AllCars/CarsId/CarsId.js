@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Topnav from "../../Topnav/Topnav";
 import Footer from "../../Footer/Footer";
+import SendMsg from "../../SendMsg/SendMsg";
+
 import { useParams } from "react-router-dom";
 import { Card, makeStyles } from "@material-ui/core";
 import Axios from "axios";
@@ -57,9 +59,11 @@ export default function CarsId() {
     setIndex(newIndex);
     // const icon = direction === "left" ? <FaChevronLeft /> : <FaChevronRight />;
   };
+  console.log(thisCar);
   return (
     <div>
       <Topnav></Topnav>
+      <SendMsg></SendMsg>
       <div className="carousel">
         <FaChevronLeft
           className="svg"
@@ -75,7 +79,14 @@ export default function CarsId() {
           onClick={() => onArrowClick("right")}
         />
       </div>
-      <div>Pris: {thisCar.price}</div>
+      <div className="aboutCar">
+        <h4>Märke: {thisCar.manufacturers}</h4>
+        <h4>Modell: {thisCar.model}</h4>
+        <h4>Årsmodell: {thisCar.year}</h4>
+        <h4>Pris: {thisCar.price}</h4>
+        <h4>Miltal: {thisCar.distance} km</h4>
+        <h4>Beskrivning: {thisCar.description}</h4>
+      </div>
       <Footer></Footer>
     </div>
   );
