@@ -2,49 +2,82 @@ import React, { useEffect } from "react";
 import Footer from "../Footer/Footer";
 import Topnav from "../Topnav/Topnav";
 import Axios from "axios";
+import "./allCars.scss";
 
 export default function AllCars(props) {
   const [cars, setCars] = React.useState([]);
   const [images, setImages] = React.useState([]);
-  // car
+  //get all cars
   useEffect(() => {
     const fetchCars = async () => {
       Axios.get(
         "http://localhost/P.ALbilhandel-backendPHP/P.ALbil%20api/api/read.php"
       ).then((response) => {
         setCars(response.data.cars);
-        // setCars([response.data]);
       });
     };
     fetchCars();
   }, []);
-  // images
+  //get all images
   useEffect(() => {
     const fetchCars = async () => {
       Axios.get(
         "http://localhost/P.ALbilhandel-backendPHP/P.ALbil%20api/api/read_image.php"
       ).then((response) => {
-        setImages(response.data.cars);
-        // setCars([response.data]);
+        setImages(response.data.image);
       });
     };
     fetchCars();
   }, []);
-  //   console.log(cars);
-  //   var newCar = JSON.parse(cars);
-  //   console.log(newCar);
+  // click to open specific car
   const thisCarbyId = (carId) => {
     let url = `/cars/${carId}`;
     props.history.push(url);
   };
-  console.log(cars);
+  // same images for one car
+  let sameIdImg = images.filter(({ car_id }) =>
+    cars.some(({ id }) => id === car_id)
+  );
+  // only one image for one car id
+  let map = new Map();
+  let filtered = [];
+  sameIdImg.forEach(function (o) {
+    var index = map.get(o.car_id);
+    if (index === undefined) {
+      map.set(o.car_id, filtered.push(o) - 1);
+      return;
+    }
+    if (filtered[index].Status < o.Status) {
+      filtered[index] = o;
+    }
+  });
+
   return (
     <div>
       <Topnav></Topnav>
+      <h1>Alla våra bilar</h1>
       {cars.map((c, i) => {
         return (
           <div key={i}>
-            <div onClick={() => thisCarbyId(c.id)}>{c.model}</div>
+            {filtered.map((p, k) => {
+              if (p.car_id === c.id) {
+                return (
+                  <div key={p.id} className="allImagesflex">
+                    <img
+                      className="allImages"
+                      src={p.file_name}
+                      alt="carImages"
+                    />
+                    <div
+                      className="allCarsPrice"
+                      onClick={() => thisCarbyId(c.id)}
+                    >
+                      {c.price}
+                    </div>
+                  </div>
+                );
+              }
+            })}
           </div>
         );
       })}

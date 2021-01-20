@@ -49,7 +49,7 @@ export default function Topnav() {
           <Link className="startNav" to="/">
             Start
           </Link>
-          <Link className="startNav" to="/allCars">
+          <Link className="startNav" to="/cars">
             Alla våra bilar
           </Link>
           <Link className="startNav" to="/about">

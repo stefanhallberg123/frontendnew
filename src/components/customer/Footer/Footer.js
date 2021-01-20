@@ -7,10 +7,16 @@ import "./footer.scss";
 
 export default function Footer() {
   return (
-    <div className="footer">
-      <p>Vi erbjuder även gratis hemleverans inom Stockholms området. </p>
-      <p>Vi reserverar oss för eventuella skriv och stavfel.</p>
-      <p> Varmt Välkomna!</p>
+    <div>
+      <div className="footer">
+        <p className="footP">
+          Vi erbjuder även gratis hemleverans inom Stockholms området.{" "}
+        </p>
+        <p className="footP">
+          Vi reserverar oss för eventuella skriv och stavfel.
+        </p>
+        <p className="footP"> Varmt Välkomna!</p>
+      </div>
       <div className="rowFooter">
         <img
           className="footerLogo"

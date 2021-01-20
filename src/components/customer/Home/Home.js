@@ -23,7 +23,7 @@ export default function Home() {
       </div>
       <div className="secondBlock">
         <img className="secondImage" src={`${secondImage}`} alt="startCar" />
-        <Link to="/allcars" className="imgTXT">
+        <Link to="/cars" className="imgTXT">
           Se alla våra bilar
         </Link>
         <Footer></Footer>

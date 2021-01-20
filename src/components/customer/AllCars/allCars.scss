@@ -1,0 +1,13 @@
+.allImagesflex {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: space-evenly;
+  .allImages {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    margin: 10px;
+  }
+}

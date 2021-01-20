@@ -1,10 +1,13 @@
-p {
-  text-align: center;
+.footer {
+  margin-top: 10%;
+  .footP {
+    font-weight: bold;
+    text-align: center;
+  }
 }
 .rowFooter {
   display: flex;
   flex-direction: row;
-
   .footerLogo {
     margin-bottom: 20px;
     width: 33%;
