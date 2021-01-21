@@ -82,7 +82,7 @@ export default function AllCars(props) {
           </div>
         );
       })}
-      <Footer></Footer>;
+      <Footer></Footer>
     </div>
   );
 }
