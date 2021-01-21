@@ -88,8 +88,6 @@ export default function CarsId() {
       setSlideIn(true);
     }, 500);
   };
-  console.log(content);
-  console.log(thisCar);
 
   return (
     <div>
