@@ -4,11 +4,29 @@
   display: flex;
   justify-content: center;
   align-items: center;
-}
-.svg {
-  height: 30px;
-  cursor: pointer;
+  .imgCarousel {
+    max-width: 100%;
+    object-fit: contain;
+    height: 350px;
+  }
+  .svg {
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+  }
 }
 .aboutCar {
   text-align: center;
+}
+@media screen and (max-width: 800px) {
+  .carousel {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  .makeStyles-card-1 {
+    padding: 50px;
+  }
+  .carousel .imgCarousel {
+    height: 150px;
+  }
 }

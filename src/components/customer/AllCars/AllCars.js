@@ -55,10 +55,10 @@ export default function AllCars(props) {
   });
 
   return (
-    <div>
+    <div className="allCars">
       <Topnav></Topnav>
       <SendMsg></SendMsg>
-      <h1>Alla våra bilar</h1>
+      <h1 className="allCarsH1">Alla våra bilar</h1>
       {cars.map((c, i) => {
         return (
           <div key={i}>
@@ -70,12 +70,10 @@ export default function AllCars(props) {
                       className="allImages"
                       src={p.file_name}
                       alt="carImages"
-                    />
-                    <div
-                      className="allCarsPrice"
                       onClick={() => thisCarbyId(c.id)}
-                    >
-                      {c.price}
+                    />
+                    <div className="textBlock">
+                      <div className="allCarsPrice">{c.price} kr</div>
                     </div>
                   </div>
                 );
